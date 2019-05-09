@@ -1,5 +1,5 @@
 <?php 
-require_once('AddTravelGroup.php');
+require_once('../class/TravelGroupRepository.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,66 +59,33 @@ require_once('AddTravelGroup.php');
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="../admin/index.php">Pievienot Ceļojumu<span class="sr-only">(current)</span></a></li>
-            <li><a href="TravelGroupListView.php">Pārvaldīt ceļojumus</a></li>
+            <li><a href="CreateTravelGroupView.php">Pievienot Ceļojumu</a></li>
+            <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojumus</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Pievienot ceļojumu</h1>
+          <h1 class="page-header">Šobrīd pievienotie aktīvie ceļojumi</h1>
 
           <div class="table-responsive">
             <table class="table table-striped">
           </div>
-          <?php 
-          if (isset($error_msg)) { 
-            echo "<div class='alert alert-info' role='alert'>
-            ".$error_msg."
-          </div>";
-          } 
+    <form method="post">
+          <?php
+            $travel_group_list_item = new TravelGroupRepository; 
+            foreach ($travel_group_list_item->getTravelGroupList() as $travel_group) { 
+                echo "<tr>";
+                echo "<td>".$travel_group['place']."</td>";
+                echo "<td align='center'>";
+                echo "<a href='TravelGroupListItemView.php'  title='View Record' data-toggle='tooltip'><input type='submit' class='btn btn-primary' value='View'></a>  ";
+                echo "<a href='TravelGroupListItemView.php'  title='Edit Record' data-toggle='tooltip'><input type='submit' class='btn btn-info' value='Edit'></a>";
+                echo "</td><td align='center'>";
+                echo "<form method='POST'  onsubmit='return confirm('Do you really want to submit the form?');'>
+                <input type='hidden' name='id' value=".$travel_group['description']."></input><input type='submit' class='btn btn-danger' name='Delete_record' value='Delete' >";
+                echo '</td></tr>';
+            }
           ?>
-          <form method="POST">
-					<div class="form-group">
-					  <label for="text">Ceļojuma nosaukums</label>
-					  <input type="text" class="form-control" name="destination"  placeholder="Ceļojuma nosaukums">
-					</div>
-
-					<div class="form-group">
-					  <label for="text">Valsts</label>
-					  <input type="text" class="form-control"  name="country"  placeholder="Ceļojuma valsts">
-					</div>
-					<div class="form-group">
-					  <label for="text">Vieta</label>
-					  <input type="text" class="form-control" name="place"  placeholder="Ceļojuma vieta">
-					</div>
-					
-					<div class="form-group">
-					  <label for="text">Ceļojuma apraksts</label>
-            <textarea  class="form-control"  rows="4" cols="50" name="description"  placeholder="Īss ceļojuma apraksts"></textarea>
-					</div>
-					
-          <div class="form-group">
-            <label for="text">Sākuma datums</label>
-            <input type="date" class="form-control" name="start_date">
-          </div>
-
-          <div class="form-group">
-            <label for="text">Beigu datums</label>
-            <input type="date" class="form-control" name="end_date">
-          </div>
-
-          <div class="form-group">
-					  <label for="text">Cena (par vienu personu)</label>
-					  <input type="number" class="form-control"  name="price" placeholder="Cena no vienas personas">
-					</div>
-
-          <div class="form-group">
-            <label for="text">Attēli</label>
-            <input type="file"  class="form-control"  name="fileToUpload" id="fileToUpload">
-          </div>
-        
-					<button type="submit" class="btn btn-default">Pievienot Ceļojumu</button><br>
-				  </form>
-              </tbody>
+        </form>
+            </tbody>
             </table>
           </div>
         </div>
