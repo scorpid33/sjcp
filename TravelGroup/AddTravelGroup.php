@@ -14,7 +14,8 @@ require_once('../class/TravelGroup.php');
         $start_date = $_POST['start_date']; 
         $end_date = $_POST['end_date']; 
         $price = $_POST['price'];
-        $travel_group = new TravelGroup($country, $place, $description, $start_date, $end_date, $price); 
+        $travel_group = new TravelGroup(); 
+        $travel_group->persist($country, $place, $description, $start_date, $end_date, $price);
         $error_msg = "Ceļojums veiksmīgi pievienots";
     } 
 
