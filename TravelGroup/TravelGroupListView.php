@@ -59,19 +59,19 @@ require_once('../class/TravelGroupRepository.php');
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="CreateTravelGroupView.php">Pievienot Ceļojumu</a></li>
-            <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojumus</a></li>
+            <li><a href="CreateTravelGroupView.php">Pievienot Ceļojumu grupu</a></li>
+            <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojumu grupas</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Šobrīd pievienotie aktīvie ceļojumi</h1>
+          <h1 class="page-header">Šobrīd pievienotie aktīvās ceļojumu grupas</h1>
 
           <div class="table-responsive">
             <table class="table table-striped">
           </div>
     <form method="post">
           <?php
-            $travel_group_list_item = new TravelGroupRepository; 
+            /*$travel_group_list_item = new TravelGroupRepository; 
             foreach ($travel_group_list_item->getTravelGroupList() as $travel_group) { 
                 echo "<tr>";
                 echo "<td>".$travel_group->place."</td>";
@@ -82,8 +82,17 @@ require_once('../class/TravelGroupRepository.php');
                 echo "<form method='POST'  onsubmit='return confirm('Do you really want to submit the form?');'>
                 <input type='hidden' name='id' value=".$travel_group->description."></input><input type='submit' class='btn btn-danger' name='Delete_record' value='Delete' >";
                 echo '</td></tr>';
-            }
+            }*/
           ?>
+                          <tr>
+                <td>Spānija</td>
+                <td align='center'>
+                <a href='TravelGroupListItemView.php'  title='View Record' data-toggle='tooltip'><input type='submit' class='btn btn-primary' value='View'></a>
+                <a href='TravelGroupListItemView.php'  title='Edit Record' data-toggle='tooltip'><input type='submit' class='btn btn-info' value='Edit'></a>
+                </td><td align='center'>
+                <form method='POST'  onsubmit='return confirm('Do you really want to submit the form?');'>
+                <input type='hidden' name='id' value="Ceļojums kaut kur"></input><input type='submit' class='btn btn-danger' name='Delete_record' value='Delete' >
+                </td></tr>
         </form>
             </tbody>
             </table>
