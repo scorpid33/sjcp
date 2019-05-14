@@ -59,17 +59,49 @@ require_once('../class/TravelGroupRepository.php');
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="CreateTravelGroupView.php">Pievienot Ceļojumu</a></li>
-            <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojumus</a></li>
+            <li><a href="CreateTravelGroupView.php">Pievienot Ceļojuma grupu</a></li>
+            <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojuma grupas</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Šobrīd pievienotie aktīvie ceļojumi</h1>
       <?php 
-      $travel_groups = new TravelGroupRepository(); 
-      $travel_group = $travel_groups->getTravelGroupItemById($_GET['id']);
-
+      /*$travel_groups = new TravelGroupRepository(); 
+      $travel_group = $travel_groups->getTravelGroupItemById($_GET['id']);*/
       ?>
+      
+      <div class="form-group">
+					  <label for="text">Nosaukums</label>
+					  <input type="text" class="form-control" value="Spānija"  name="price" placeholder="Cena no vienas personas">
+			</div>
+
+      <div class="form-group">
+					  <label for="text">Apraksts</label>
+					  <input type="text" class="form-control" value="Kaut kāds apraksts"  name="price" placeholder="Cena no vienas personas">
+			</div>
+
+      <div class="form-group">
+            <label for="text">Dalībnieki</label>
+            <table class="table table-striped"> 
+            <tr>
+              <th>Vārds Uzvārds</th>
+              <th>Dzimums</th>
+              <th>E-pasts</th>
+              <th>Telefona numurs</th>
+          </tr>
+          <tr>
+            <td>Vārds Vārds</td>
+            <td>Vīrietis</td>
+            <td>aaa@aaa.lv</td>
+            <td>2323232323</td>
+          </tr>
+        </table>
+        <div class="text-right"> 
+          <input type="button" class="btn btn-success" value="Pievienot dalībniekus">
+        </div>
+
+      <input type="button" class="btn btn-info" value="Pievienot dalībniekus">
+
           <div class="table-responsive">
             <table class="table table-striped">
           </div>
