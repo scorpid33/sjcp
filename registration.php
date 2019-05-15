@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Registration</title>
-<link rel="stylesheet" type="text/css" href="style2.css">
+<link rel="stylesheet" type="text/css" href="Stylo.css">
 </head>
 <body>
 <div class="form-wrapper">
