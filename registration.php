@@ -38,7 +38,7 @@
         $query = "INSERT into `users` (username, password, type) VALUES ('$username', '$password', 'user')";
         $result = mysqli_query($con,$query);
         if($result){
-				header("Location: good.php");
+				header("Location: anketa.php");
         }
     }else{
 ?>
