@@ -5,6 +5,7 @@ require_once('../components/TravelMiniDesc.component.php');
 $travel_group_list_item = new TravelGroupRepository;
 $travel_groups = $travel_group_list_item->getTravelGroupList();
 $travel_groups_recommended = [];
+$travel_groups_recommended[0] = $travel_groups[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">

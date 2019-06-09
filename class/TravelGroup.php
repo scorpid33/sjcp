@@ -30,12 +30,13 @@ Class TravelGroup
         if (!$query) {
             printf("Errormessage: %s\n", $this->conn->error);
         } else { 
-            $this->country = $query['country']; 
-            $this->place = $query['place'];
-            $this->description = $query['description']; 
-            $this->start_date = $query['start_date']; 
-            $this->end_date = $query['end_date']; 
-            $this->price = $query['price'];
+            $result = $query->fetch_assoc();
+            $this->country = $result['country']; 
+            $this->place = $result['place'];
+            $this->description = $result['description']; 
+            $this->start_date = $result['start_date']; 
+            $this->end_date = $result['end_date']; 
+            $this->price = $result['price'];
         }
     }
 

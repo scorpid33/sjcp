@@ -15,6 +15,7 @@ Class TravelMiniDescriptionComponent{
     function __construct($travel_group){
         //Can work only with class TravelGroup objektiem
         if(is_a($travel_group, 'TravelGroup')){
+            $this->id = $travel_group->id;
             $this->country = $travel_group->country;
             $this->place = $travel_group->place;
             $this->start_date = $travel_group->start_date;
@@ -64,7 +65,7 @@ Class TravelMiniDescriptionComponent{
                         <h3> Steidzāties</h3>
                     </div>
                     <div class="media-right media-middle">
-                        <a href="../Travel/TravelPage.php"><input type="submit" class="btn btn-success" value="View details"></a>
+                        <a href="../Travel/TravelPage.php?id='.$this->id.'"><input type="submit" class="btn btn-success" value="View details"></a>
                     </div>
                 </div>
             </div>
