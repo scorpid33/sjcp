@@ -116,3 +116,14 @@ input[type='text']{
 .reminder a:hover {
   color: #ff0000;
 }
+
+
+.travel-images{
+  width:100px;
+  height:100px;
+}
+
+#top_image{
+  width: 400px;
+  height: 400px;
+}

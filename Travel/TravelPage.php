@@ -96,7 +96,7 @@ require_once('../class/TravelGroup.php');
       </div>
     </div>
   </div>
-  <a href="TravelList.php"><input type="submit" class="btn btn-success" value="Atpakaļ"></a>
+  <a href="home2.php"><input type="submit" class="btn btn-success" value="Atpakaļ"></a>
   ';
   
   

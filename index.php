@@ -43,7 +43,7 @@
 			$logged_in_user = mysqli_fetch_assoc($result);
 			if ($logged_in_user['type'] == 'admin') {
 				$_SESSION['username'] = $username;
-				header("Location: ../admin/index.php"); // Redirect user to home.php
+				header("Location: ../TravelGroup/CreateTravelGroupView.php"); // Redirect user to home.php
 			}else{
 				$_SESSION['username'] = $username;
 				header("Location: home2.php");

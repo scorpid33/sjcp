@@ -1,5 +1,5 @@
 <?php
-require_once('../class/TravelGroup.php');
+require_once('./class/TravelGroup.php');
 
 Class TravelMiniDescriptionComponent{
     
@@ -12,7 +12,7 @@ Class TravelMiniDescriptionComponent{
     private $duration= 0;
     //private $footer= '';
 
-    function __construct($travel_group){
+    function __construct(TravelGroup $travel_group){
         //Can work only with class TravelGroup objektiem
         if(is_a($travel_group, 'TravelGroup')){
             $this->id = $travel_group->id;
