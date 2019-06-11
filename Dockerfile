@@ -1,4 +1,4 @@
-# Run image with: docker build -t sjcp . && docker run -t --rm -p 8000:8000 sjcp
+# Run image with: docker build -t sjcp . && docker run -t -i --rm -p 8000:8000 sjcp
 
 FROM debian:stable
 
