@@ -48,7 +48,7 @@ $travel_groups_recommended[0] = $travel_groups[0];
     if(count($travel_groups_recommended)){
         echo '<div class="jumbotron">
                 <h1>Mēs rekomendējam: </h1>
-            </div>;'
+            </div>';
         echo '<div class="container-fluid">';
         echo '<div class="row">';
         foreach($travel_group_list_item->getTravelGroupList() as $travel_group){
@@ -94,4 +94,4 @@ $travel_groups_recommended[0] = $travel_groups[0];
   </body>
 </html>
 </html>
-  
+
