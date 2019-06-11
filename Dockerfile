@@ -1,0 +1,12 @@
+# Run image with: docker build -t sjcp . && docker run -t --rm -p 8000:8000 sjcp
+
+FROM debian:stable
+
+RUN apt-get update
+RUN apt-get install -y php php-mysqli mysql-server
+
+EXPOSE 8000
+RUN mkdir /sjcp
+WORKDIR /sjcp
+ENTRYPOINT ["php", "-S", "0.0.0.0:8000"]
+COPY . .
