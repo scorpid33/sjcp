@@ -1,27 +1,27 @@
 <?php require('dbcon.php'); ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="Stylo.css">
+<link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
 <div class="form-wrapper">
   <div class="good">
   <form action="#" method="post">
-    <h1><center>Hello, World!</center></h1>
+    <h1><center>Laipni lūgti!</center></h1>
 	</div>
     <div class="form-item">
-		<input type="text" name="username" required="required" placeholder="Username" autofocus required></input>
+		<input type="text" name="username" required="required" placeholder="Lietotājvārds" autofocus required></input>
     </div>
     
     <div class="form-item">
-		<input type="password" name="password" required="required" placeholder="Password" required></input>
+		<input type="password" name="password" required="required" placeholder="Parole" required></input>
     </div>
     
     <div class="button-panel">
-		<input type="submit" class="button" title="Log In" name="login" value="Log in"></input>
+		<input type="submit" class="button" title="Log In" name="login" value="Autorizēties"></input>
     </div>
 	    <div class="reminder">
-    <p><a href="registration.php">Sign Up</a></p>
+    <p><a href="registration.php">Reģistrēties</a></p>
   </div>
   </form>
 
