@@ -1,6 +1,25 @@
 <?php
-include("class/users.php");
-$qus=new  users;
+session_start();
+require('country_select.php');
+require('dbcon.php');
+$countrySelect = new CountrySelect();
+if(isset($_POST['login'])){
+	$howOften = stripslashes($_REQUEST['howOften']);
+	$howOften = mysqli_real_escape_string($con,$howOften);
+	$lastVisited = stripslashes($_REQUEST['lastVisited']);
+	$lastVisited = mysqli_real_escape_string($con,$lastVisited);
+	$wantVisit = stripslashes($_REQUEST['wantVisit']);
+	$wantVisit = mysqli_real_escape_string($con,$wantVisit);
+	$interests = stripslashes($_REQUEST['interests']);
+	$interests = mysqli_real_escape_string($con,$interests);
+
+	$query = "UPDATE `users` u SET u.howOften='$howOften', u.lastVisited='$lastVisited', u.wantVisit='$wantVisit', u.interests='$interests' WHERE u.username='".$_SESSION['username']."'";
+        echo var_dump($query);
+		$result = mysqli_query($con,$query);
+		if($result){
+			header('Location: good.php');
+		}
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +38,7 @@ $qus=new  users;
 <div class="container">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
+	<form action="#" method="post">
 		  <h2>Lūdzu aizpildiet anketu</h2>
 
 		  <table class="table table-bordered">
@@ -30,19 +50,16 @@ $qus=new  users;
 			
 			<tbody>
 			  <tr class="info">
-				<td>&nbsp;1&emsp;<input type="radio" value="0" name="id" />&nbsp; Bieži </td>
+				<td>&nbsp;1&emsp;<input type="radio" value="0" name="howOften" id="opt1" checked/>&nbsp;<label for="opt1"> Bieži </label></td>
 			  </tr>
 			  <tr class="info">
-				<td>&nbsp;2&emsp;<input type="radio" value="1" name="id" />&nbsp; Dažreiz </td>
+				<td>&nbsp;2&emsp;<input type="radio" value="1" name="howOften" id="opt2" />&nbsp; <label for="opt2"> Dažreiz </label></td>
 			  </tr>
 			  <tr class="info">
-				<td>&nbsp;3&emsp;<input type="radio" value="2" name="id" />&nbsp; Reti </td>
+				<td>&nbsp;3&emsp;<input type="radio" value="2" name="howOften" id="opt3" />&nbsp; <label for="opt3"> Reti </label> </td>
 			  </tr>
 			  	<tr class="info">
-				<td>&nbsp;4&emsp;<input type="radio" value="3" name="id" />&nbsp; Nekad nēceļoju </td>
-			  </tr>
-			<tr class="info">
-				<td><input type="radio" checked="checked" style="display:none" value="no_attempt" name="id2>" /></td>
+				<td>&nbsp;4&emsp;<input type="radio" value="3" name="howOften" id="opt4" />&nbsp; <label for="opt4"> Nekad nēceļoju </label> </td>
 			  </tr>
 			</tbody>
 			
@@ -54,7 +71,7 @@ $qus=new  users;
 			
 			<tbody>
 				<tr class="info">
-					<td> <input type="text" name="name"><br> </td>
+					<td> <?php $countrySelect->create('lastVisited');?><br> </td>
 				</tr>
 			</tbody>
 			
@@ -66,7 +83,7 @@ $qus=new  users;
 			
 			<tbody>
 				<tr class="info">
-					<td> <input type="text" name="name"><br> </td>
+					<td> <?php $countrySelect->create('wantVisit');?><br> </td>
 				</tr>
 			</tbody>
 			
@@ -78,7 +95,7 @@ $qus=new  users;
 			
 			<tbody>
 				<tr class="info">
-					<td> <input type="text" name="name"><br> </td>
+					<td> <textarea class="form-control" cols="20" rows="5" name="interests"></textarea>
 				</tr>
 			</tbody>
 			
@@ -90,8 +107,8 @@ $qus=new  users;
 		</div>
 	</center>
 	
-</form>	
-		</div>
+	</form>	
+</div>
 <div class="col-sm-2"></div>
 </div>
 

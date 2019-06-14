@@ -3,8 +3,8 @@ include("class/users.php");
 include('dbcon.php');
 include('auth.php'); 
 require_once('./components/TravelList.component.php');
-$profile=new users;
-$profile->cat_shows();
+// $profile=new users;
+// $profile->cat_shows();
 //print_r($profile->cat);
 //print_r($profile->data);
 ?>
@@ -38,8 +38,9 @@ $profile->cat_shows();
   
 
     <div id="menu2" class="tab-pane fade">
-      <h3>Profile information</h3>
-      <p>This is profile information</p>
+      <?php
+        include_once("profile.php");
+      ?>
     </div>
   </div>
 </div>
