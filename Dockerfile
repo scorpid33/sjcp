@@ -8,5 +8,5 @@ RUN apt-get install -y php php-mysqli mysql-server
 EXPOSE 8000
 RUN mkdir /sjcp
 WORKDIR /sjcp
-ENTRYPOINT ["php", "-S", "0.0.0.0:8000"]
+ENTRYPOINT ["./start.sh"]
 COPY . .
