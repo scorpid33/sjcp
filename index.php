@@ -22,6 +22,7 @@
     </div>
 	    <div class="reminder">
     <p><a href="registration.php">Reģistrēties</a></p>
+	<p><a href="changePassword.php">Mainīt paroli</a></p>
   </div>
   </form>
 

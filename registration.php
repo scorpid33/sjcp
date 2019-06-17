@@ -34,16 +34,22 @@
     $result = mysqli_query($con,$query);
     $uniqueUsername = ($result->fetch_row()[0] > 0) ? 'Lietotājs ar tadu lietotajvārdu jau eksistē' : '';   
   }
+
+
   if(isset($_REQUEST['password'])){
     $password = stripslashes($_REQUEST['password']);
     $password = mysqli_real_escape_string($con,$password);
   }
+
+
   if(isset($_REQUEST['confirmPassword'])){
     $confirmPassword = stripslashes($_REQUEST['confirmPassword']);
     $confirmPassword = mysqli_real_escape_string($con,$confirmPassword);
 
     $differentPasswords = ($password != $confirmPassword) ? 'Paroles nesakrīt' : ''; 
   }
+
+
   if(isset($_REQUEST['email'])){
     $email = stripslashes($_REQUEST['email']);
     $email = mysqli_real_escape_string($con,$email);
@@ -55,18 +61,24 @@
       $uniqueEmail = ($result->fetch_row()[0] > 0) ? 'Konts ar tadu e-pastu ir jau reģistrēts' : '';  
     }
   }
+
+
   if(isset($_REQUEST['name'])){
     $name = stripslashes($_REQUEST['name']);
     $name = mysqli_real_escape_string($con,$name);
 
-    $namePattern = (!preg_match('/^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$/',$namePattern)) ? 'Tikai burti ir atļauti' : '';
+    $namePattern = (!preg_match('/^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$/',$name)) ? 'Tikai burti ir atļauti' : '';
   }
+
+
   if(isset($_REQUEST['surname'])){
     $surname = stripslashes($_REQUEST['surname']);
     $surname = mysqli_real_escape_string($con,$surname);
 
-    $surnamePattern = (!preg_match('/^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$/',$surnamePattern)) ? 'Tikai burti ir atļauti' : '';
+    $surnamePattern = (!preg_match('/^[a-zA-Z]+(([,. -][a-zA-Z ])?[a-zA-Z]*)*$/',$surname)) ? 'Tikai burti ir atļauti' : '';
   }
+
+
   if(isset($_REQUEST['date'])){
     $date = stripslashes($_REQUEST['date']);
     $date = mysqli_real_escape_string($con,$date);
@@ -75,26 +87,29 @@
 
     $allowedAge = ($diff<18 || $diff>65) ? 'Reģistrācija ir atļautā tikai no 18 līdz 65 gadiem' : '';
   }
+
+
   if(isset($_REQUEST['gender'])){
     $gender = stripslashes($_REQUEST['gender']);
     $gender = mysqli_real_escape_string($con,$gender);
   }
 
-    if(isset($_REQUEST['submit']) 
-    && strlen($uniqueUsername) == 0
-    && strlen($usernamePattern) == 0
-    && strlen($uniqueEmail) == 0
-    && strlen($emailPattern) == 0
-    && strlen($differentPasswords) == 0
-    && strlen($namePattern) == 0
-    && strlen($surnamePattern) == 0
-    && strlen($allowedAge) == 0){
-      $query = "INSERT into `users` (username, password, type, email, name, surname, date, gender) VALUES ('$username', '$password', 'user', '$email', '$name', '$surname', '$date', '$gender')";
-      $result = mysqli_query($con,$query);
-      if($result){
-        header("Location: anketa.php");
-      }
+
+  if(isset($_REQUEST['submit']) 
+  && strlen($uniqueUsername) == 0
+  && strlen($usernamePattern) == 0
+  && strlen($uniqueEmail) == 0
+  && strlen($emailPattern) == 0
+  && strlen($differentPasswords) == 0
+  && strlen($namePattern) == 0
+  && strlen($surnamePattern) == 0
+  && strlen($allowedAge) == 0){
+    $query = "INSERT into `users` (username, password, type, email, name, surname, date, gender) VALUES ('$username', '$password', 'user', '$email', '$name', '$surname', '$date', '$gender')";
+    $result = mysqli_query($con,$query);
+    if($result){
+      header("Location: anketa.php");
     }
+  }
 ?>
 <div class="form-wrapper" style="{height:0}">
   

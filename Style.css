@@ -117,6 +117,12 @@ input[type='text']{
   color: #ff0000;
 }
 
+input[type='text2']{
+	background: transparent url("grr/mail.png") no-repeat;
+	background-position: 10px 50%;
+        background-size: 25px 25px;
+}
+
 
 .travel-images{
   width:100px;
