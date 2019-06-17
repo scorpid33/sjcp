@@ -14,8 +14,7 @@ if(isset($_POST['login'])){
 	$interests = mysqli_real_escape_string($con,$interests);
 
 	$query = "UPDATE `users` u SET u.howOften='$howOften', u.lastVisited='$lastVisited', u.wantVisit='$wantVisit', u.interests='$interests' WHERE u.username='".$_SESSION['username']."'";
-        echo var_dump($query);
-		$result = mysqli_query($con,$query);
+        $result = mysqli_query($con,$query);
 		if($result){
 			header('Location: good.php');
 		}

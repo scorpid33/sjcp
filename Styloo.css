@@ -9,8 +9,7 @@ body {
 
 
 .form-wrapper {
-width:350px;
-height:580px;
+  width:350px;
   position: absolute;
   top: 30%;
   left: 48%;
