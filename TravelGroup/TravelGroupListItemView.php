@@ -100,7 +100,7 @@ require_once('../class/TravelGroupRepository.php');
           <input type="button" class="btn btn-success" value="Pievienot dalībniekus">
         </div>
 
-      <input type="button" class="btn btn-info" value="Pievienot dalībniekus">
+      <input type="button" class="btn btn-info" value="Saglabāt">
 
           <div class="table-responsive">
             <table class="table table-striped">
