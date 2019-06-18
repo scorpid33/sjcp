@@ -45,7 +45,7 @@ require_once('AddTravelGroup.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../admin/index.php">Admin Panel</a>
+          <a class="navbar-brand" href="../TravelGroup/TravelGroupListView.php">Admin Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

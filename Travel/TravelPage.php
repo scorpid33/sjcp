@@ -72,7 +72,7 @@ require_once('../class/TravelGroup.php');
       <h3>Apraksts:</h3>
     </div>
     <div class="panel-body">
-      <div>'.$travel->description.'</div>
+      <div style="{font-size:20px}">'.$travel->description.'</div>
     </div>
   </div>
   <div class="panel panel-default">

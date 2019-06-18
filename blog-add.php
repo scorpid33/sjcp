@@ -61,8 +61,9 @@ exit(); }
 <h2>Raksts</h2>
 <textarea rows="20" cols="120" name="blog_content"></textarea>
 <br><br>
-<input type="submit" name="submit_blog" value="Izveidot blogu">
+<input class="btn btn-submit" type="submit" name="submit_blog" value="Izveidot blogu">
 </form>
+<a href="/home2.php"><input type="submit" class="btn btn-success" value="Atpakaļ"></a>
 </div>
 </body>
 <?php $con->close(); ?>

@@ -1,7 +1,9 @@
 <?php
 
 function get_user_blog_list() {
-    
+	
+	$user_blogs = [];
+
 	if(!isset($_SESSION['user_id'])) {
 		include_once("get_user_id.php");
 	}
