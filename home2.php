@@ -25,6 +25,7 @@ require_once('./components/TravelList.component.php');
 <center><h3>Welcome <?php echo $_SESSION['username']; ?> </h3></center>  <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Ceļojumi</a></li>
     <li><a data-toggle="tab" href="#menu2">Profile</a></li>
+  	<li><a data-toggle="tab" href="#menu3">Blogi</a></li>
     <li style="float:right"><a href="logout.php">Logout</a></li>
   </ul>
 
