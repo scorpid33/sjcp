@@ -42,6 +42,11 @@ require_once('./components/TravelList.component.php');
         include_once("profile.php");
       ?>
     </div>
+    <div id="menu3" class="tab-pane fade">
+      <?php
+        include_once("all_blog_list.php");
+      ?>
+    </div>
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
