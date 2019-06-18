@@ -30,5 +30,9 @@
             </div>
         </div>
         <div>
-            Bloga daļa
+		<a href='blog-add.php'><h3><label>Izveidot blogu.</label></h3><br></a>
+        <label>Mani blogi:</label>   
+			<?php
+				include_once("user_blog_list.php");
+			?>
         </div>
