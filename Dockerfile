@@ -3,7 +3,7 @@
 FROM debian:stable
 
 RUN apt-get update
-RUN apt-get install -y php php-mysqli mysql-server
+RUN apt-get install -y php php-mysqli mysql-server php-curl
 
 EXPOSE 8000
 RUN mkdir /sjcp
