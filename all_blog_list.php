@@ -36,7 +36,7 @@ function get_blogs() {
 	
 	
 	foreach ($user_blog_array as $row) {
-		Echo "<a href='blog_view.php?id=".$row['blog_id']."'><div class='blog_list'><img src='".$row['images_folder_link']."' width='150' height='150' alt='Blog image'> <label>".$row['title']."</label></div></a>";
+		Echo "<a href='blog_view.php?id=".$row['blog_id']."'><div class='blog_list blog-border'><img src='".$row['images_folder_link']."' width='150' height='145' alt='Blog image'> <label>".$row['title']."</label></div></a>";
 	}
 
 ?>

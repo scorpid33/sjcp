@@ -29,47 +29,27 @@ Class TravelMiniDescriptionComponent{
 
     function show(){
         echo '
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1 class="text-center">'.$this->country.' gaida tevi!</h1>
-            </div>
-            <div class="panel-body">       
-                <div class="media">
-                    <div class="media-left">
-                        <img class="media-object" id="top_image" src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg">
+        <div class="container travel-desc">
+            <div class="image-box">
+                <div class="image">
+                    <img src="../css/grr/Paris.jpg">
+                </div>
+                <div class="badge badge-error">recommended</div>
+                <div class="description">
+                    <div class="info">
+                        <div class="dates">No 22.02.2019 līdz 24.02.2019</div>
+                        <div class="country">Francija</div>
                     </div>
-                    <div class="media-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <div><strong>Valsts:</strong> '.$this->country.'</div>
-                            </li>
-                            <li class="list-group-item">
-                                <div><strong>Vieta:</strong> '.$this->place.'</div>
-                            </li>
-                            <li class="list-group-item">
-                                <div><strong>Sakuma datums:</strong> '.$this->start_date.'</div>
-                            </li>
-                            <li class="list-group-item">
-                                <div><strong>Beigas datums:</strong> '.$this->end_date.'</div>
-                            </li>
-                            <li class="list-group-item">
-                                <div><strong>Cena:</strong> '.$this->price.'&#8364 par vienu personu</div>
-                            </li>
-                        </ul>
+                    <div class="price">
+                        <div class="price-from">Sakot no</div>
+                        <div class="price-value">123 EUR</div>
                     </div>
                 </div>
             </div>
-            <div class="panel-footer">
-                <div class="media">
-                    <div class="media-body">
-                        <h3> Steidzāties</h3>
-                    </div>
-                    <div class="media-right media-middle">
-                        <a href="../Travel/TravelPage.php?id='.$this->id.'"><input type="submit" class="btn btn-success" value="View details"></a>
-                    </div>
-                </div>
+            <div class="middle">
+                <a href="../Travel/TravelPage.php?id='.$this->id.'"><input type="submit" class="btn btn-success" value="View details"></a>
             </div>
-        </div>';
+         </div>';
     }
 }
 ?>

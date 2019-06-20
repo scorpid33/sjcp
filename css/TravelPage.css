@@ -1,3 +1,28 @@
+body {
+  color: #fff;
+  font: 87.5%/1.5em 'Open Sans', sans-serif;
+	background:url(grr/this.jpg)no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
+
+
+.form-wrapper {
+  width:1100px;
+  position: absolute;
+  top: 30%;
+  left: 21%;
+  margin: -184px 0px 0px -155px;
+  background: rgb(211,211,211);
+  border-style: solid;
+  border-color: black;
+  padding: 15px 25px;
+  border-radius: 25px;
+}
+
+
+
 .container{
     width: 70%;
 }

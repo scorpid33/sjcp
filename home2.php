@@ -17,15 +17,18 @@ require_once('./components/TravelList.component.php');
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/TravelPage.css">
   <link rel="stylesheet" href="css/TravelList.css">
+  <link rel="stylesheet" href="css/blog.css">
   
 </head>
 <body>
 
 <div class="container">
-<center><h3>Welcome <?php echo $_SESSION['username']; ?> </h3></center>  <ul class="nav nav-tabs">
+<div class="form-wrapper">
+<center><h3>Esi sveicināts <?php echo $_SESSION['username']; ?></h3></center>  <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Ceļojumi</a></li>
     <li><a data-toggle="tab" href="#menu2">Profile</a></li>
-    <li style="float:right"><a href="logout.php">Logout</a></li>
+  	<li><a data-toggle="tab" href="#menu3">Blogi</a></li>
+    <li style="float:right"><a href="logout.php">Iziet</a></li>
   </ul>
 
   <div class="tab-content">
@@ -48,6 +51,7 @@ require_once('./components/TravelList.component.php');
       ?>
     </div>
   </div>
+</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
