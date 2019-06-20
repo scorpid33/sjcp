@@ -1,0 +1,5 @@
+CREATE TABLE `participants` (
+	`user_id` INT NULL,
+	`travel_group_id` INT NULL
+)
+COLLATE='ucs2_latvian_ci'

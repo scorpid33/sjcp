@@ -45,7 +45,7 @@ require_once('../class/TravelGroupRepository.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../admin/index.php">Admin Panel</a>
+          <a class="navbar-brand" href="CreateTravelGroupView.php">Admin Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -61,25 +61,25 @@ require_once('../class/TravelGroupRepository.php');
           <ul class="nav nav-sidebar">
             <li><a href="CreateTravelGroupView.php">Pievienot Ceļojuma grupu</a></li>
             <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojuma grupas</a></li>
+            <li><a href="UserManagment.php">Lietotāju pārvaldība</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Šobrīd pievienotie aktīvie ceļojumi</h1>
       <?php 
-      /*$travel_groups = new TravelGroupRepository(); 
-      $travel_group = $travel_groups->getTravelGroupItemById($_GET['id']);*/
+      $travel_groups = new TravelGroupRepository(); 
+      $travel_group = $travel_groups->getTravelGroupItemById($_GET['id']);
       ?>
-      
+      <form method="POST">
       <div class="form-group">
 					  <label for="text">Nosaukums</label>
-					  <input type="text" class="form-control" value="Spānija"  name="price" placeholder="Cena no vienas personas">
+					  <input type="text" class="form-control" value=<?php echo $travel_group->country; ?>  name="name" placeholder="Cena no vienas personas">
 			</div>
 
       <div class="form-group">
 					  <label for="text">Apraksts</label>
-					  <input type="text" class="form-control" value="Kaut kāds apraksts"  name="price" placeholder="Cena no vienas personas">
+					  <input type="text" class="form-control" value=<?php echo $travel_group->country; ?>  name="description" placeholder="Cena no vienas personas">
 			</div>
-
       <div class="form-group">
             <label for="text">Dalībnieki</label>
             <table class="table table-striped"> 
@@ -87,20 +87,58 @@ require_once('../class/TravelGroupRepository.php');
               <th>Vārds Uzvārds</th>
               <th>Dzimums</th>
               <th>E-pasts</th>
-              <th>Telefona numurs</th>
+              <th>Darbības<th>
           </tr>
+          <?php 
+          $sql = "SELECT * FROM users WHERE id = (SELECT user_id from participants where travel_group_id =" . $_GET['id'] .");";
+          $conn = new mysqli('localhost','root','','sjcp');
+            if($conn->connect_errno)
+            {
+                die ("database connection failed".$this->conn->connect_errno);
+            }
+            $query = $conn->query($sql);
+            foreach ($query as $row) {
+              echo    "<tr><td>" . $row['name'] . "</td>
+                        <td>" . $row['surname'] . "</td>
+                        <td>" . $row['email'] . "</td>
+                        <td><a href='removeParticipant.php?user_id=". $row['id'] ."&tg_id =" . $_GET['id'] . "' title='Delete Record' data-toggle='tooltip'><input type='button' value='Dzēst' class='btn btn-danger'></a>
+                        </td></tr>";
+            }
+          ?>
           <tr>
-            <td>Vārds Vārds</td>
-            <td>Vīrietis</td>
-            <td>aaa@aaa.lv</td>
-            <td>2323232323</td>
           </tr>
         </table>
         <div class="text-right"> 
-          <input type="button" class="btn btn-success" value="Pievienot dalībniekus">
+          <a href="addParticipantsView.php?tg_id=<?php echo $travel_group->id; ?>"><input type="button" class="btn btn-success" value="Pievienot dalībniekus"></a>
         </div>
 
-      <input type="button" class="btn btn-info" value="Saglabāt">
+      <input name='save' type="submit" class="btn btn-info" value="Saglabāt">
+      </form>
+      <?php 
+      if (isset($_POST['save'])) { 
+        if ($_POST['name'] != null && $_POST['description'] != null) {
+          $name = $_POST['name'];
+          $descr = $_POST['description']; 
+          $id = $_GET['id'];
+          $sql = "UPDATE travel_groups SET 
+          country='$name',
+          description ='$descr'
+          WHERE id=$id;";
+          $conn = new mysqli('localhost','root','','sjcp');
+          if($conn->connect_errno)
+          {
+              die ("database connection failed".$this->conn->connect_errno);
+          }
+          $query = $conn->query($sql);
+          $conn->close();
+          echo "<meta http-equiv='refresh' content='0'>";
+          echo "<div class='alert alert-success' role='alert'>
+          Administrators pievienots
+</div>";
+        }
+      }
+
+      ?>
 
           <div class="table-responsive">
             <table class="table table-striped">
