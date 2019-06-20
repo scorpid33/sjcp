@@ -17,6 +17,8 @@ require_once('./components/TravelList.component.php');
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/TravelPage.css">
   <link rel="stylesheet" href="css/TravelList.css">
+  //Pievienoju blog.css Var izmainīt kā izskatīsies href linki un boddy atstarpes sākumā un beigās
+  <link rel="stylesheet" href="css/blog.css">
   
 </head>
 <body>
