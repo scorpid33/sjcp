@@ -1,3 +1,9 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+</head>
+<body>
+<div class="form-wrapper">
 <div class="panel panel-default">
             <div class="panel-heading">
                 <h1 class="text-center">Profils</h1>
@@ -24,15 +30,20 @@
                             <li class="list-group-item">
                                 <div><strong>Intereses:</strong> Programmešana, ceļošana</div>
                             </li>
+							<li class="button-panel">
+								<a href='blog-add.php'><h3><label>Izveidot blogu.</label></h3><br></a>
+							</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div>
-		<a href='blog-add.php'><h3><label>Izveidot blogu.</label></h3><br></a>
         <label>Mani blogi:</label>   
 			<?php
 				include_once("user_blog_list.php");
 			?>
         </div>
+</div>
+</body>
+</html>
