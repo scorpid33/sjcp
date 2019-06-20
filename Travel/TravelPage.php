@@ -22,7 +22,6 @@ require_once('../class/TravelGroup.php');
 
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
-    <link href="./TravelPage.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -37,6 +36,7 @@ require_once('../class/TravelGroup.php');
 
 <body>
   <div class="container">
+  <div class="form-wrapper">
   <?php
   
   $travel = new TravelGroup;
@@ -101,6 +101,7 @@ require_once('../class/TravelGroup.php');
   
   
   ?>
+  </div>
   </div>
 </body>
 

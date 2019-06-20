@@ -25,20 +25,20 @@ if(isset($_POST['login'])){
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/anketa.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body onload="timeout()" >
-
+<body background="grr/this.jpg" >
 
 
 
 <div class="container">
+<div class="form-wrapper">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 	<form action="#" method="post">
-		  <h2>Lūdzu aizpildiet anketu</h2>
+		  <center><h2>Lūdzu aizpildiet anketu!</h2></center>
 
 		  <table class="table table-bordered">
 			<thead>
@@ -109,6 +109,7 @@ if(isset($_POST['login'])){
 	</form>	
 </div>
 <div class="col-sm-2"></div>
+</div>
 </div>
 
 </body>
