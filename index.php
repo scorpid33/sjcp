@@ -9,6 +9,7 @@
   <form action="#" method="post">
     <h1><center>Laipni lūgti!</center></h1>
 	</div>
+	
     <div class="form-item">
 		<input type="text" name="username" required="required" placeholder="Lietotājvārds" autofocus required></input>
     </div>
@@ -23,6 +24,7 @@
 	    <div class="reminder">
     <p><a href="registration.php">Reģistrēties</a></p>
 	<p><a href="changePassword.php">Mainīt paroli</a></p>
+	<p><a href="info.php">KAS iR ŠĪ PLATFORMA?</a></p>
   </div>
   </form>
 

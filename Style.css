@@ -10,15 +10,15 @@ body {
 
 .form-wrapper {
 width:300px;
-height:320px;
+height:350px;
   position: absolute;
   top: 50%;
   left: 48%;
-  margin: -184px 0px 0px -155px;
+  margin: -184px 20px 0px -155px;
   background: rgb(211,211,211);
   border-style: solid;
   border-color: black;
-  padding: 15px 25px;
+  padding: 25px 25px;
   border-radius: 25px;
 }
 
