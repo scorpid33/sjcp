@@ -119,3 +119,26 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.button-panel .button {
+  background: linear-gradient(to right, rgb(202, 216, 49), rgb(246, 245, 243));
+  color: #000000;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'helvetica','Open Sans', sans-serif;
+  font-size: 1.7em;
+  font-weight: normal;
+  text-align: center;
+  transition: background 0.3s linear;
+  border-radius: 12px;
+  width: 100%;
+  margin-top:10px;
+}
+
+.button:hover {
+  background: linear-gradient(to right, rgb(246, 245, 243), rgb(202, 216, 49));
+}
+
+.form-item input, .button-panel .button {
+  border-radius: 2px
+}

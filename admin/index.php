@@ -1,7 +1,7 @@
 <?php
-// include "../class/users.php";
-// $cat=new users;
-// $category=$cat->cat_shows();
+include "../class/users.php";
+$cat=new users;
+$category=$cat->cat_shows();
 //print_r($category);
 ?>
 <!DOCTYPE html>

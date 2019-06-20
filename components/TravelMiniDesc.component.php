@@ -37,12 +37,12 @@ Class TravelMiniDescriptionComponent{
                 <div class="badge badge-error">recommended</div>
                 <div class="description">
                     <div class="info">
-                        <div class="dates">No 22.02.2019 līdz 24.02.2019</div>
-                        <div class="country">Francija</div>
+                        <div class="dates">No '.$this->start_date.' līdz '.$this->end_date.'</div>
+                        <div class="country">'.$this->country.'</div>
                     </div>
                     <div class="price">
                         <div class="price-from">Sakot no</div>
-                        <div class="price-value">123 EUR</div>
+                        <div class="price-value">'.$this->price.' EUR</div>
                     </div>
                 </div>
             </div>

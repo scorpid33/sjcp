@@ -4,7 +4,7 @@ class users{
 	public $host="localhost";
 	public $username="root";
 	public $pass="";
-	public $db_name="sjcp";
+	public $db_name="login";
 	public $conn;
 	public $data;
 	public $cat;
