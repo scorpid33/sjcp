@@ -223,6 +223,19 @@
             </div>';
     }
     ?>
+    <br>
+    <style>
+      .form-group { 
+        border:1px solid black;
+        color: black;
+        padding: 5px;
+      }
+
+    </style>
+    <div class="form-group"> 
+    <input type="radio" name="segrgation" value="senior">Esmu seniors<br>
+    <input type="radio" name="segrgation" value="junior">Esmu jaunietis<br>  
+    </div>
    
     <div class="button-panel">
 		<input type="submit" class="button" title="Log In" name="submit" value="Reģistrēties"></input>
