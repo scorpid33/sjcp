@@ -1,3 +1,9 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/blogadd.css">
+<meta charset="utf-8">
+</head>
+
 <?php
 include_once('header.php');
 require('dbcon.php');
@@ -52,13 +58,56 @@ exit(); }
 ?>
 
 <body>
-<div class="container-blog">
-<h2> Bloga Izveide </h2>
+<style>
+.form-wrapper {
+  width:1200px;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  background: rgb(211,211,215);
+  border-style: solid;
+  border-color: black;
+  padding: 15px 25px;
+  border-radius: 25px;
+}
 
+.form-wrapper2 {
+  position: absolute;
+  top: 80%;
+  left: 9%;
+  position: absolute;
+  background: rgb(211,211,215);
+  border-style: solid;
+  border-color: black;
+  padding: 5px 5px;
+  border-radius: 25px;
+}
+
+body{
+  color: black;
+  font-size: 16px;
+}
+
+.profile{
+  font-size: 16px;
+  color: black;
+}
+
+.good {
+color: #000000;
+margin-top: -11px;
+}
+</style>
+<div class="form-wrapper">
+<div class="good">
+<b><h2> Bloga Izveide </h2></b>
+<center>
 <form method="POST" enctype="multipart/form-data">
 <h2>Virsraksts</h2>
 <textarea rows="1" cols="35" name="blog_title" class="h1 blog-border_radius-s"></textarea>
-<h2><label for="Img_file_upload">Augšuplādēt failu</label></h2>
+<div class="form-wrapper2">
+<h3><label for="Img_file_upload">Augšuplādēt bildi</label></h3>
+</div>
 
 <!–– for iekš label pasaka kādu nosaukumu dot failam ar noteiktu id. Izmanto style="visibility:hidden;", lai paslēptu pogu, un tādā veidā lebel strādātu kā poga. --->
 
@@ -68,8 +117,11 @@ exit(); }
 <textarea rows="20" cols="120" name="blog_content" class="blog-border_radius-s"></textarea>
 <br><br>
 <input type="submit" name="submit_blog" value="Izveidot blogu" class="blog-border_radius-vs log-button-spacing blog-background-dark_grey">
-<input type="submit" name="exit_blog" value="Atgriezties atpakaļ" class="blog-border_radius-vs log-button-spacing blog-background-dark_grey">
+<input type="submit" name="exit_blog" value="Atgriezties atpakaļ" class="blog-border_radius-vs log-button-spacing blog-background-dark_grey"></center>
 </form>
+</div>
 </div>
 </body>
 <?php $con->close(); ?>
+</html>
+

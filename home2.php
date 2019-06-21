@@ -38,10 +38,11 @@ body{
   font-size: 16px;
   color: black;
 }
+
 </style>
 <body>
 
-<div class="container">
+
 <div class="form-wrapper">
 <center><h3>Esi sveicināts <?php echo $_SESSION['username']; ?></h3></center>  <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Ceļojumi</a></li>
@@ -71,7 +72,7 @@ body{
     </div>
   </div>
 </div>
-</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

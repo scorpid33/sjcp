@@ -22,7 +22,29 @@ exit(); }
 	
 
 ?>
+<style>
+.form-wrapper{
+  width: 900px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
 
+body{
+  color: black;
+  font-size: 16px;
+}
+
+.profile{
+  font-size: 16px;
+  color: black;
+}
+.break-word {
+  word-wrap: break-word;
+}
+</style>
 <body>
 <div class="fixed-header">
 <div style="text-align: left; margin-left: 15px;
@@ -36,7 +58,7 @@ exit(); }
 <?php
 echo "<h1>Blogs : ".$result_row['title']."</h1></div></div>";
 ?>
-<div style="margin-top: 25px;" class="container">
+<div style="margin-top: 25px;" class="form-wrapper">
 <?php
 if (!empty($result_row['images_folder_link'])) {
 	echo "<br><img src='".$result_row['images_folder_link']."' class='blog_image_fit' alt='Blog image'>";
