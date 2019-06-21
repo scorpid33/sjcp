@@ -1,7 +1,7 @@
 body {
   color: #fff;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
-	background:url(grr/this.jpg)no-repeat center center fixed;
+	background:url(../grr/this.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -11,9 +11,10 @@ body {
 .form-wrapper {
   width:1100px;
   position: absolute;
-  top: 30%;
-  left: 21%;
-  margin: -184px 0px 0px -155px;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
   background: rgb(211,211,211);
   border-style: solid;
   border-color: black;
@@ -22,17 +23,12 @@ body {
 }
 
 
-
-.container{
-    width: 70%;
-}
-
 .travel-images{
     width:100px;
     height:100px;
 }
 
 #top_image{
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
 }

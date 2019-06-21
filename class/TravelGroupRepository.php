@@ -38,7 +38,7 @@ Class TravelGroupRepository
 
     public function getTravelGroupItemById($id)
     { 
-        foreach ($travel_groups as $travel_group) { 
+        foreach ($this->travel_groups as $travel_group) { 
             if ($travel_group->id == $id) { 
                 return $travel_group;
             }

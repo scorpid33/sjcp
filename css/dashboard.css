@@ -5,11 +5,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   font: 87.5%/1.5em 'Open Sans', sans-serif;
-	background:url(grr/this.jpg)no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   padding-top: 50px;}
 
 .form-wrapper {

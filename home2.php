@@ -18,8 +18,27 @@ require_once('./components/TravelList.component.php');
   <link rel="stylesheet" href="css/TravelPage.css">
   <link rel="stylesheet" href="css/TravelList.css">
   <link rel="stylesheet" href="css/blog.css">
-  
 </head>
+<style>
+.form-wrapper{
+  width: 900px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+body{
+  color: black;
+  font-size: 16px;
+}
+
+.profile{
+  font-size: 16px;
+  color: black;
+}
+</style>
 <body>
 
 <div class="container">

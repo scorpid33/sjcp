@@ -52,7 +52,7 @@ $travel_groups_recommended[0] = $travel_groups[0];
         echo '<div class="container-fluid">';
         echo '<div class="row">';
         foreach($travel_group_list_item->getTravelGroupList() as $travel_group){
-            echo '<div class="col-lg-6">';
+            echo '<div class="col-sm-6">';
             $component = new TravelMiniDescriptionComponent($travel_group);
             $component->show();
             echo '</div>';
@@ -71,7 +71,7 @@ $travel_groups_recommended[0] = $travel_groups[0];
             $travel_group_list_item = new TravelGroupRepository;
             echo '<div class="row">';
             foreach($travel_group_list_item->getTravelGroupList() as $travel_group){
-                echo '<div class="col-md-6">';
+                echo '<div class="col-sm-6">';
                 $component = new TravelMiniDescriptionComponent($travel_group);
                 $component->show();
                 echo '</div >';

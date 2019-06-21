@@ -45,7 +45,7 @@ require_once('AddTravelGroup.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../admin/index.php">Admin Panel</a>
+          <a class="navbar-brand" href="CreateTravelGroupView.php">Admin Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -59,8 +59,9 @@ require_once('AddTravelGroup.php');
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="../admin/index.php">Pievienot Ceļojuma grupu<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="CreateTravelGroupView.php">Pievienot Ceļojuma grupu<span class="sr-only">(current)</span></a></li>
             <li><a href="TravelGroupListView.php">Pārvaldīt ceļojumu grupas</a></li>
+            <li><a href="UserManagment.php">Lietotāju Pārvaldība</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -78,39 +79,14 @@ require_once('AddTravelGroup.php');
           ?>
           <form method="POST">
 					<div class="form-group">
-					  <label for="text">grupas nosaukums</label>
-					  <input type="text" class="form-control" name="destination"  placeholder="Ceļojuma nosaukums">
+					  <label for="text">Ceļojuma gala mērķis</label>
+					  <input type="text" class="form-control" name="destination"  placeholder="Galamērķis">
 					</div>
 
 					<div class="form-group">
 					  <label for="text">Ceļojuma apraksts</label>
             <textarea  class="form-control"  rows="4" cols="50" name="description"  placeholder="Īss ceļojuma apraksts"></textarea>
 					</div>
-					
-          <div class="form-group">
-            <label for="text">Ceļojums</label>
-            <select>
-          <option value="">Galmērķis 1</option>
-          <option value="">Galamērķis 2</option>
-          <option value="">Galamērķis 3</option>
-          <option value="">Galamērķis 4</option>
-          </select>
-          </div>
-
-
-          <div class="form-group">
-            <label for="text">Dalībnieki</label>
-            <table class="table table-striped"> 
-            <tr>
-              <th>Vārds Uzvārds</th>
-              <th>Dzimums</th>
-              <th>E-pasts</th>
-              <th>Telefona numurs</th>
-          </tr>
-        </table>
-        <div class="text-right"> 
-          <input type="button" class="btn btn-success" value="Pievienot dalībniekus">
-        </div>
         
 					<button type="submit" class="btn btn-default">Pievienot Ceļojumu</button><br>
 				  </form>

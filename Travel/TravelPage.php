@@ -11,6 +11,7 @@ require_once('../class/TravelGroup.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../css/TravelPage.css">
 
     <title>Dashboard Template for Bootstrap</title>
 
@@ -21,7 +22,7 @@ require_once('../class/TravelGroup.php');
     <link href="..//css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/dashboard.css" rel="stylesheet">
+    <!-- <link href="../css/dashboard.css" rel="stylesheet"> -->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -35,37 +36,35 @@ require_once('../class/TravelGroup.php');
   </head>
 
 <body>
-  <div class="container">
   <div class="form-wrapper">
   <?php
   
   $travel = new TravelGroup;
   $travel->getTravelGroup($_GET['id']);
   echo '
-  <div class="text-centered">
-    <img class="img-responsive center-block" id="top_image" src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg">
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-        <h3>Pamata informācija:</h3>
+  <div class="media">
+    <div class="media-left">
+      <img class="media-object" id="top_image" src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg">
     </div>
-    <ul class="list-group">
-      <li class="list-group-item">
-          <div><strong>Valsts:</strong> '.$travel->country.'</div>
-      </li>
-      <li class="list-group-item">
-          <div><strong>Vieta:</strong> '.$travel->place.'</div>
-      </li>
-      <li class="list-group-item">
-          <div><strong>Sakuma datums:</strong> '.$travel->start_date.'</div>
-      </li>
-      <li class="list-group-item">
-          <div><strong>Beigas datums:</strong> '.$travel->end_date.'</div>
-      </li>
-      <li class="list-group-item">
-          <div><strong>Cena:</strong> '.$travel->price.'&#8364 par vienu personu</div>
-      </li>
-    </ul>
+    <div class="media-body">
+      <ul class="list-group">
+        <li class="list-group-item">
+            <div><strong>Valsts:</strong> '.$travel->country.'</div>
+        </li>
+        <li class="list-group-item">
+            <div><strong>Vieta:</strong> '.$travel->place.'</div>
+        </li>
+        <li class="list-group-item">
+            <div><strong>Sakuma datums:</strong> '.$travel->start_date.'</div>
+        </li>
+        <li class="list-group-item">
+            <div><strong>Beigas datums:</strong> '.$travel->end_date.'</div>
+        </li>
+        <li class="list-group-item">
+            <div><strong>Cena:</strong> '.$travel->price.'&#8364 par vienu personu</div>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -101,7 +100,6 @@ require_once('../class/TravelGroup.php');
   
   
   ?>
-  </div>
   </div>
 </body>
 

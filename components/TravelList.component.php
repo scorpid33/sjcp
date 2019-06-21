@@ -22,7 +22,7 @@ Class TravelListComponent {
                     <div class="container-fluid">
                         <div class="row">';
             foreach($this->travel_groups as $travel_group){
-                echo '<div class="col-lg-6">';
+                echo '<div class="col-sm-6">';
                 $component = new TravelMiniDescriptionComponent($travel_group);
                 $component->show();
                 echo '</div>';
@@ -37,7 +37,7 @@ Class TravelListComponent {
                 <div class="container-fluid">
                     <div class="row">';
         foreach($this->travel_groups as $travel_group){
-            echo '<div class="col-lg-6">';
+            echo '<div class="col-sm-6">';
             $component = new TravelMiniDescriptionComponent($travel_group);
             $component->show();
             echo '</div >';

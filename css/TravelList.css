@@ -1,4 +1,6 @@
+
 .travel-desc{
+    font-size: 14px;
     position: relative;
     width: 100%;
 }
@@ -105,13 +107,6 @@
     padding: 3px;
     margin: 3px;
 }
-
-span .footer-text{
-    font-size:20px;
-}
-
-
-
 
 .badge {
     padding: 1px 9px 2px;

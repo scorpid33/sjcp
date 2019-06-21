@@ -32,7 +32,7 @@ Class TravelMiniDescriptionComponent{
         <div class="container travel-desc">
             <div class="image-box">
                 <div class="image">
-                    <img src="../css/grr/Paris.jpg">
+                    <img src="https://neupusti.net/wp-content/uploads/2019/04/cq5dam.web_.1280.1280.jpeg">
                 </div>
                 <div class="badge badge-error">recommended</div>
                 <div class="description">
@@ -50,6 +50,7 @@ Class TravelMiniDescriptionComponent{
                 <a href="../Travel/TravelPage.php?id='.$this->id.'"><input type="submit" class="btn btn-success" value="View details"></a>
             </div>
          </div>';
+
     }
 }
 ?>

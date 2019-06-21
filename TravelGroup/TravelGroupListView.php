@@ -45,7 +45,7 @@ require_once('../class/TravelGroupRepository.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../admin/index.php">Admin Panel</a>
+          <a class="navbar-brand" href="CreateTravelGroupView.php">Admin Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -61,6 +61,7 @@ require_once('../class/TravelGroupRepository.php');
           <ul class="nav nav-sidebar">
             <li><a href="CreateTravelGroupView.php">Pievienot Ceļojumu grupu</a></li>
             <li class="active"><a href="TravelGroupListView.php">Pārvaldīt ceļojumu grupas</a></li>
+            <li><a href="UserManagment.php">Lietotāju pārvaldība</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -69,15 +70,19 @@ require_once('../class/TravelGroupRepository.php');
           <div class="table-responsive">
             <table class="table table-striped">
           </div>
-                          <tr>
-                <td>Spānija</td>
-                <td align='center'>
-                <a href='TravelGroupListItemView.php'  title='View Record' data-toggle='tooltip'><input type='button' class='btn btn-primary' value='View'></a>
-                <a href='TravelGroupListItemView.php'  title='Edit Record' data-toggle='tooltip'><input type='submit' class='btn btn-info' value='Edit'></a>
-                </td><td align='center'>
-                <form method='POST'  onsubmit='return confirm('Do you really want to submit the form?');'>
-                <input type='hidden' name='id' value="Ceļojums kaut kur"></input><input type='submit' class='btn btn-danger' name='Delete_record' value='Delete' >
-                </td></tr>
+          <?php
+          $travel_groups = new TravelGroupRepository();
+          foreach ($travel_groups->getTravelGroupList() as $travel_group) { 
+            echo "<tr>
+            <td>" . $travel_group->country ."</td>
+            <td align='center'>
+            <a href='TravelGroupListItemView.php?id=" . $travel_group->id . "' title='View Record' data-toggle='tooltip'><input type='button' class='btn btn-primary' value='Rediģēt'></a>
+            </td><td align='center'>
+            <a href='TravelGroupDelete.php?id=" . $travel_group->id . "'><input type='button' class='btn btn-danger' name='delete' value='Dzēst'></a>
+            </td></tr>";
+          }
+          ?>
+                
             </tbody>
             </table>
           </div>
