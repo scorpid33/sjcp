@@ -41,7 +41,7 @@ Class TravelMiniDescriptionComponent{
                         <div class="country">'.$this->country.'</div>
                     </div>
                     <div class="price">
-                        <div class="price-from">Sakot no</div>
+                        <div class="price-from"></div>
                         <div class="price-value">'.$this->price.' EUR</div>
                     </div>
                 </div>

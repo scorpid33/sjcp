@@ -34,20 +34,20 @@ Class TravelMiniDescriptionComponent{
                 <div class="image">
                     <img src="https://neupusti.net/wp-content/uploads/2019/04/cq5dam.web_.1280.1280.jpeg">
                 </div>
-                <div class="badge badge-error">recommended</div>
+                <div class="badge badge-error">Rekomendējam</div>
                 <div class="description">
                     <div class="info">
                         <div class="dates">No '.$this->start_date.' līdz '.$this->end_date.'</div>
                         <div class="country">'.$this->country.'</div>
                     </div>
                     <div class="price">
-                        <div class="price-from">Sakot no</div>
+                        <div class="price-from">Sākot no</div>
                         <div class="price-value">'.$this->price.' EUR</div>
                     </div>
                 </div>
             </div>
             <div class="middle">
-                <a href="../Travel/TravelPage.php?id='.$this->id.'"><input type="submit" class="btn btn-success" value="View details"></a>
+                <a href="../Travel/TravelPage.php?id='.$this->id.'"><input type="submit" class="btn btn-success" value="Skatīt"></a>
             </div>
          </div>';
 
